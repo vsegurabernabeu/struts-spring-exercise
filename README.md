@@ -2,7 +2,7 @@
 First exercise with spring and struts 1
 
 This is my first exercise with JEE. I have used for this spring 4.3.5, struts 1 to begin with. It is a work in progress
-and it is just intended to learn. 
+and it is just intended to learn new technologies. You would probably not find it useful, though. 
 
 It is a simple web application with a h2 database for testing, that holds a database of users and people.
 Every person can have several users. Users and their passwords are used to login.
@@ -18,4 +18,4 @@ introduce these changes (Hibernate, JPA) and test the application with each of t
 
 After that I will change the database to a 'production' one, Mysql.
 
-If you find this useful at all, feel free to use it.   
+If you find this useful at all, feel free to use it. 
