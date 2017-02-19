@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+
+	<form-beans>
+		<form-bean name="personaForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="persona"
+				type="mx.gm.com.capadatos.domain.Persona" />
+		</form-bean>
+
+		<form-bean name="usuarioForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="usuario"
+				type="mx.gm.com.capadatos.domain.Usuario" />
+		</form-bean>
+		
+		<!-- added for login  -->
+		<form-bean name="LoginForm" type="mx.gm.com.capaweb.LoginForm"/>
+	</form-beans>
+		
+	<global-forwards>
+		<forward name="inicio" path="/inicio.do" />
+		<forward name="listar" path="/inicio.do" />
+		<forward name="login" path="/WEB-INF/pages/login.jsp" />
+ 	</global-forwards>
+	<action-mappings>
+
+		<action parameter="metodo" path="/inicio"
+			type="org.springframework.web.struts.DelegatingActionProxy" validate="false">
+			<forward name="listar" path="/WEB-INF/pages/listarPersonas.jsp" />
+		</action>
+
+		<action name="personaForm" parameter="metodo" path="/detalle"
+			scope="request" type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false">
+			<forward name="editar" path="/WEB-INF/pages/detallePersona.jsp" />
+		</action>
+
+		<action name="personaForm" parameter="metodo" path="/guardar"
+			scope="request" type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false">
+		</action>
+
+		<!-- Añadidos para Usuario -->
+
+		<action name="usuarioForm" parameter="metodo" path="/detalleUsuario"
+			scope="request" type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false">
+			<forward name="editarUsuario" path="/WEB-INF/pages/detalleUsuario.jsp" />
+		</action>
+
+		<action name="usuarioForm" parameter="metodo" path="/guardarUsuario"
+			scope="request" type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="false">
+			<forward name="listar" path="/WEB-INF/pages/listarPersonas.jsp" />
+		</action>
+
+		<!--  Añadidos para el login -->
+
+        <action input="/WEB-INF/pages/login.jsp" name="LoginForm" path="/Login" scope="session" type="org.springframework.web.struts.DelegatingActionProxy" 
+        ><!-- type="mx.gm.com.capaweb.LoginAction" -->
+            <forward name="failure" path="/WEB-INF/pages/failure.jsp" />
+        </action>
+
+		<action path="/Logout" scope="session" type="mx.gm.com.capaweb.LogoutAction">
+            <forward name="login" path="/WEB-INF/pages/login.jsp" />
+        </action>
+		
+
+	</action-mappings>
+	<controller />
+	<message-resources parameter="mensajes" /> 
+	
+	<!-- Spring Struts plugin for production -->
+	<plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+		<set-property property="contextConfigLocation"
+			value="/WEB-INF/classes/applicationContext.xml,/WEB-INF/classes/datasource-test.xml" />
+	</plug-in>
+
+</struts-config>

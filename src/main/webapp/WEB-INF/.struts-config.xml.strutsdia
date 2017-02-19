@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="StrutsProcess">
+ <PROCESS-ITEM ID="#inicio" NAME="action0" PATH="/inicio"
+  SHAPE="32,17,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="listar" NAME="forward0"
+   PATH="/WEB-INF/pages/listarPersonas.jsp" TARGET="page0"
+   TITLE="listar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page0" PATH="/WEB-INF/pages/listarPersonas.jsp"
+  SHAPE="240,34,0,0" SUBTYPE="jsp" TITLE="listarPersonas.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="inicio" NAME="forward0" PATH="/inicio.do"
+  SHAPE="48,129,0,0" TARGET="action0" TITLE="inicio" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="listar" NAME="forward1" PATH="/inicio.do"
+  SHAPE="48,241,0,0" TARGET="action0" TITLE="listar" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#detalle" NAME="action1" PATH="/detalle"
+  SHAPE="32,353,0,0" TITLE="personaForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="editar" NAME="forward0"
+   PATH="/WEB-INF/pages/detallePersona.jsp" TARGET="page1"
+   TITLE="editar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page1" PATH="/WEB-INF/pages/detallePersona.jsp"
+  SHAPE="240,370,0,0" SUBTYPE="jsp" TITLE="detallePersona.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/guardar.do"
+   SUBTYPE="confirmed" TARGET="action2" TITLE="/guardar.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#guardar" NAME="action2" PATH="/guardar"
+  SHAPE="32,465,0,0" TITLE="personaForm" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#detalleUsuario" NAME="action3"
+  PATH="/detalleUsuario" SHAPE="32,577,0,0" TITLE="usuarioForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="editarUsuario" NAME="forward0"
+   PATH="/WEB-INF/pages/detalleUsuario.jsp" TARGET="page2"
+   TITLE="editarUsuario" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page2" PATH="/WEB-INF/pages/detalleUsuario.jsp"
+  SHAPE="240,594,0,0" SUBTYPE="jsp" TITLE="detalleUsuario.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/guardarUsuario.do"
+   SUBTYPE="confirmed" TARGET="action4" TITLE="/guardarUsuario.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#guardarUsuario" NAME="action4"
+  PATH="/guardarUsuario" SHAPE="448,594,0,0" TITLE="usuarioForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="listar" NAME="forward0"
+   PATH="/WEB-INF/pages/listarPersonas.jsp" TARGET="page0"
+   TITLE="listar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page3" PATH="/WEB-INF/pages/failure.jsp"
+  SHAPE="240,689,0,0" SUBTYPE="jsp" TITLE="failure.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="login" NAME="forward2"
+  PATH="/WEB-INF/pages/login.jsp" SHAPE="32,801,0,0" TARGET="page4"
+  TITLE="login" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#Login" NAME="action5" PATH="/Login"
+  SHAPE="240,913,0,0" TITLE="LoginForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="failure" NAME="forward0"
+   PATH="/WEB-INF/pages/failure.jsp" TARGET="page3" TITLE="failure"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page4" PATH="/WEB-INF/pages/login.jsp"
+  SHAPE="448,801,0,0" SUBTYPE="jsp" TITLE="login.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/Login.do" SUBTYPE="confirmed"
+   TARGET="action5" TITLE="/Login.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#Logout" NAME="action6" PATH="/Logout"
+  SHAPE="240,817,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="login" NAME="forward0"
+   PATH="/WEB-INF/pages/login.jsp" TARGET="page4" TITLE="login"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+</PROCESS>
