@@ -18,4 +18,4 @@ introduce these changes (Hibernate, JPA) and test the application with each of t
 
 After that I will change the database to a 'production' one, Mysql.
 
-If you find this useful at all, feel free to use it.
+If you find this useful at all, feel free to use it.   
